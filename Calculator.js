@@ -1,6 +1,10 @@
 const add = (nums) =>{
     const delimiter = /[,\n]/;
     const arrOfNumbers = nums.split(delimiter);
+    const negativeNumbers = arrOfNumbers.filter(num => num < 0);
+    if (negativeNumbers.length > 0) {
+      throw new Error('ngative numbers not allowed: ' + negativeNumbers.join(', '));
+    }
     const sum = arrOfNumbers.reduce(function(total, num){
         return parseInt(total) + parseInt(num)
     })
@@ -18,4 +22,5 @@ addCalculatorTest('',0)
 addCalculatorTest('1',1)
 addCalculatorTest('1, 5',6)
 addCalculatorTest("1\n2,3",6)
+addCalculatorTest("-1\n2,-3",6)
 
