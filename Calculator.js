@@ -7,3 +7,5 @@ const add = (nums) =>{
 }
 
 add('')
+add('1')
+add('1, 5')
