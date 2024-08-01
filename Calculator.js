@@ -1,18 +1,18 @@
 const add = (nums) =>{
-    const arrOfNumbers = nums.split(',')
+    const arrOfNumbers = nums.split(',');
     const sum = arrOfNumbers.reduce(function(total, num){
         return parseInt(total) + parseInt(num)
     })
-    return sum || 0;
+    return parseInt(sum || 0)
 }
-
-const addCalculatorTest = ()=> {
-    //For different type of strings numbers
-    if (add('') === 0 || add('1'===1) || add('1, 5')===6) {
+const addCalculatorTest = (params, output)=> {
+    if (add(params) === output) {
       console.log("Test Passed");
     } else {
       console.error("Test Failed");
     }
   }
 
-addCalculatorTest()
+addCalculatorTest('',0)
+addCalculatorTest('1',1)
+addCalculatorTest('1, 5',6)
