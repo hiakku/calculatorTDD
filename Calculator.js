@@ -6,8 +6,13 @@ const add = (nums) =>{
     return sum || 0;
 }
 
-add('')
-add('1')
-add('1, 5')
-//Any amount of number
-add('1, 5, 36,22398, 382, 38329, 38823, 12899821798')
+const addCalculatorTest = ()=> {
+    //For different type of strings numbers
+    if (add('') === 0 || add('1'===1) || add('1, 5')===6) {
+      console.log("Test Passed");
+    } else {
+      console.error("Test Failed");
+    }
+  }
+
+addCalculatorTest()
